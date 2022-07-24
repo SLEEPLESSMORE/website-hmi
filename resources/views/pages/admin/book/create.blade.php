@@ -48,8 +48,38 @@
                   </div>
                   <div class="col-md-12">
                     <div class="form-group">
-                      <label>Pengarang Buku</label>
+                      <label>Penulis Buku</label>
                       <input type="text" class="form-control" name="author" required />
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label>Halaman Buku</label>
+                      <input type="text" class="form-control" name="halaman" required />
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label>Bahasa</label>
+                      <input type="text" class="form-control" name="bahasa" required />
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label>Negara</label>
+                      <input type="text" class="form-control" name="negara" required />
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label>Penerbit Buku</label>
+                      <input type="text" class="form-control" name="publisher" required />
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label>Tahun Terbit</label>
+                      <input type="month" class="form-control" name="year" required />
                     </div>
                   </div>
                   <div class="col-md-12">

@@ -3,15 +3,14 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-
-use App\Http\Requests\Admin\BookRequest;
-use App\Book;
+use App\Http\Requests\Admin\BeritaRequest;
+use App\Berita;
 use Illuminate\Support\Facades\Storage;
 use Yajra\DataTables\Facades\DataTables;
 
-class BookController extends Controller
+class BeritaController extends Controller
 {
-    /**
+            /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -19,7 +18,7 @@ class BookController extends Controller
     public function index()
     {
         if (request()->ajax()) {
-            $query = Book::query();
+            $query = Berita::query();
 
             return Datatables::of($query)
                 ->addColumn('action', function ($item) {
@@ -34,7 +33,7 @@ class BookController extends Controller
                                         Aksi
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="action' .  $item->id . '">
-                                    <form action="' . route('book.destroy', $item->id) . '" method="POST">
+                                    <form action="' . route('berita.destroy', $item->id) . '" method="POST">
                                         ' . method_field('delete') . csrf_field() . '
                                         <button type="submit" class="dropdown-item text-danger">
                                             Hapus
@@ -44,17 +43,14 @@ class BookController extends Controller
                             </div>
                     </div>';
                 })
-                ->editColumn('file', function ($item) {
-                    return $item->file ? '<embed type="application/pdf" src="' . Storage::url($item->file) . '" width="600" height="400"></embed>' : '';
-                })
                 ->editColumn('photo', function ($item) {
                     return $item->photo ? '<img src="' . Storage::url($item->photo) . '" style="max-height: 80px;"/>' : '';
                 })
-                ->rawColumns(['action','file','photo'])
+                ->rawColumns(['action','photo'])
                 ->make();
         }
 
-        return view('pages.admin.book.index');
+        return view('pages.admin.berita.index');
     }
 
     /**
@@ -64,7 +60,7 @@ class BookController extends Controller
      */
     public function create()
     {
-        return view('pages.admin.book.create');
+        return view('pages.admin.berita.create');
 
     }
 
@@ -74,17 +70,16 @@ class BookController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(BookRequest $request)
+    public function store(BeritaRequest $request)
     {
         $data = $request->all();
 
-        $data['file'] = $request->file('file')->store('assets/book', 'public');
-        $data['photo'] = $request->file('photo')->store('assets/book-image', 'public');
+        $data['photo'] = $request->file('photo')->store('assets/berita-image', 'public');
 
 
-        Book::create($data);
+        Berita::create($data);
 
-        return redirect()->route('book.index');
+        return redirect()->route('berita.index');
     }
 
     /**
@@ -106,9 +101,9 @@ class BookController extends Controller
      */
     public function edit($id)
     {
-        $item = Book::findOrFail($id);
+        $item = Berita::findOrFail($id);
 
-        return view('pages.admin.book.edit',[
+        return view('pages.admin.berita.edit',[
             'item' => $item
         ]);
     }
@@ -124,11 +119,11 @@ class BookController extends Controller
     {
         $data = $request->all();
 
-        $item = Book::findOrFail($id);
+        $item = Berita::findOrFail($id);
 
         $item->update($data);
 
-        return redirect()->route('book.index');
+        return redirect()->route('berita.index');
     }
 
     /**
@@ -139,10 +134,11 @@ class BookController extends Controller
      */
     public function destroy($id)
     {
-        $item = Book::findorFail($id);
+        $item = Berita::findorFail($id);
         $item->delete();
 
-        return redirect()->route('book.index');
+        return redirect()->route('berita.index');
 
     }
+
 }

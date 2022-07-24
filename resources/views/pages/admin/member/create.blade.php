@@ -48,7 +48,13 @@
                   </div>
                   <div class="col-md-12">
                     <div class="form-group">
-                      <label>TTL</label>
+                      <label>Tempat Lahir</label>
+                      <input type="text" class="form-control" name="tempat" required />
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label>Tanggal Lahir</label>
                       <input type="date" class="form-control" name="ttl" required />
                     </div>
                   </div>

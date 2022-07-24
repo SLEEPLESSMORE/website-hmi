@@ -31,7 +31,8 @@
                                     <tr>
                                         <th>Nama</th>
                                         <th>Alamat</th>
-                                        <th>TTL</th>
+                                        <th>Tempat Lahir</th>
+                                        <th>Tanggal Lahir</th>
                                         <th>Fakultas</th>
                                         <th>Universitas</th>
                                         <th>LK1</th>
@@ -73,6 +74,7 @@
             columns: [
                 { data: 'name', name: 'name' },
                 { data: 'alamat', name: 'alamat' },
+                { data: 'tempat', name: 'tempat' },
                 { data: 'ttl', name: 'ttl' },
                 { data: 'fakultas', name: 'fakultas' },
                 { data: 'univ', name: 'univ' },

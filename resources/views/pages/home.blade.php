@@ -432,6 +432,20 @@ Fakultas Teknik @endsection @section('content') @push('custom-css')
     </div>
   </div>
 </div>
+        <div class="container overflow-hidden">
+            <div
+              class="
+                call-to-action
+                wow
+                animate__animated animate__slow animate__slideInUp
+              "
+            >
+              <h2>Jumlah total pengurus : {{ $member }} Orang</h2>
+              <a href="{{route('pengurus')}}" class="theme-btn"
+                >Detail <i class="icofont-double-right"></i
+              ></a>
+            </div>
+        </div>
 <!-- team-section end -->
 <!-- ================ -->
 

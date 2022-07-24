@@ -20,8 +20,14 @@ Route::get('/tentang-hmi', 'HomeController@about')->name('tentang');
 Route::get('/faq', 'HomeController@faq')->name('faq');
 Route::get('/kontak-kami', 'HomeController@kontak')->name('kontak');
 Route::get('/susunan-pengurus', 'HomeController@pengurus')->name('pengurus');
-Route::get('/potret-agenda', 'HomeController@agenda')->name('agenda');
 Route::get('/perpustakaan', 'HomeController@perpus')->name('perpus');
+Route::get('/training', 'HomeController@training')->name('training');
+Route::get('/detail-book/{id}', 'HomeController@detailbook')->name('detail-book');
+Route::get('/detail-training/{id}', 'HomeController@detailtraining')->name('detail-training');
+Route::get('/berita', 'HomeController@berita')->name('berita');
+Route::get('/detail-berita/{id}', 'HomeController@detailberita')->name('detail-berita');
+Route::get('/agenda', 'HomeController@agenda')->name('agenda');
+Route::get('/detail-agenda/{id}', 'HomeController@detailagenda')->name('detail-agenda');
 Route::get('/keluar', 'HomeController@logout')->name('keluar');
 
 // Route::get('/login', 'HomeController@login')->name('login');
@@ -39,7 +45,9 @@ Route::prefix('dashboard')
         Route::resource('member', 'MemberController');
         Route::resource('surat', 'SuratController');
         Route::resource('book', 'BookController');
-
+        Route::resource('training', 'TrainingController');
+        Route::resource('berita', 'BeritaController');
+        Route::resource('agenda', 'AgendaController');
     });
 
 

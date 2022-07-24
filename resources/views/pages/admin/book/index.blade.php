@@ -31,7 +31,13 @@
                                     <tr>
                                         <th>Judul</th>
                                         <th>Sampul</th>
-                                        <th>Pengarang</th>
+                                        <th>Penulis</th>
+                                        <th>Penerbit</th>
+                                        <th>Halaman</th>
+                                        <th>Negara</th>
+                                        <th>Bahasa</th>
+                                        <th>Tahun Terbit</th>
+                                        <th>Deskripsi</th>
                                         <th>File Buku</th>
                                         <th>Aksi</th>
                                     </tr>
@@ -63,8 +69,13 @@
                 { data: 'judul', name: 'judul' },
                 { data: 'photo', name: 'photo' },
                 { data: 'author', name: 'author' },
+                { data: 'publisher', name: 'publisher' },
+                { data: 'halaman', name: 'halaman' },
+                { data: 'negara', name: 'negara' },
+                { data: 'bahasa', name: 'bahasa' },
+                { data: 'year', name: 'year' },
+                { data: 'desc', name: 'desc' },
                 { data: 'file', name: 'file' },
-
                 {
                     data: 'action',
                     name: 'action',
